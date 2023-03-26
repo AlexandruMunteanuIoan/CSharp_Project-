@@ -8,23 +8,29 @@ namespace LibrarieModele
 {
     public class Question
     {
-        public string text;
-        public List<string> options;
-        public int correctAnswerIndex;
+        public string intrebare;
+        public List<string> optiuni;
+        public int indexIntrebariiCurente;
 
-        public Question(string text, List<string> options, int correctAnswerIndex)
+        public Question(string intrebare, List<string> optiuni, int indexIntrebariiCurente)
         {
-            
+            this.intrebare = intrebare;
+            this.optiuni = optiuni;
+            this.indexIntrebariiCurente = indexIntrebariiCurente;
         }
 
-        public bool IsAnswerCorrect(int answerIndex)
+        public bool IsAnswerCorrect(int indexRaspuns)
         {
-            
+            return indexRaspuns == indexIntrebariiCurente;
         }
 
         public void Display()
         {
-           
+            Console.WriteLine(intrebare);
+            for (int i = 0; i < optiuni.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {optiuni[i]}");
+            }
         }
     }
 
