@@ -9,12 +9,23 @@ namespace NivelStocareDate
 {
     public class CitireScriereFisier
     {
-        private readonly string fileName;
+        private readonly string fileName = "questions.txt";
+        private string numeFisier = "Scor.txt";
+        private  int number;
 
-        public CitireScriereFisier(string fileName)
+        public CitireScriereFisier()
         {
-            this.fileName = fileName;
+            
         }
+
+        public void ScriereScorInFisier( int scor)
+        {
+            using (StreamWriter streamWriterFisierText = new StreamWriter(numeFisier, true))
+            {
+                streamWriterFisierText.WriteLine($"Scorul tău final este {scor}/{number}.");
+            }
+        }
+
 
         public List<Question> CitireFisier()
         {
@@ -43,13 +54,14 @@ namespace NivelStocareDate
             return questions;
         }
 
-
+       
 
         public List<Question> SelectareIntrebari(int n)
         {
             List<Question> questions = CitireFisier();
             List<Question> intrebariSelectate = new List<Question>();
             Random random = new Random();
+            number = n;
 
             while (intrebariSelectate.Count < n && questions.Count > 0)
             {

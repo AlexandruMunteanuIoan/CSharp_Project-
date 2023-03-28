@@ -13,8 +13,10 @@ namespace LibrarieModele
         {
             this.questions = questions;
         }
+        
+        public Quizi() { } 
 
-        public void Start()
+        public int Start()
         {
             Console.Clear();
             Console.WriteLine("Bine ati venit la acest test!");
@@ -23,6 +25,7 @@ namespace LibrarieModele
             indexIntrebariiCurente = 0;
             scor = 0;
             NextQuestion();
+            return scor;
         }
 
         public void NextQuestion()
@@ -75,7 +78,7 @@ namespace LibrarieModele
             Console.Clear();
             Console.WriteLine("Chestionar terminat!");
             Console.WriteLine($"Scorul tau final este {scor}/{questions.Count}.");
-            Console.WriteLine("Apasati orice tasta pentru a iesi.");
+            Console.WriteLine("-----------------------------------");
             Console.ReadKey();
         }
     }
