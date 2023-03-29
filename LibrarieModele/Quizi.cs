@@ -66,7 +66,7 @@ namespace LibrarieModele
             {
                 Console.WriteLine("Gresit!");
             }
-            Console.WriteLine($"Scoul: {scor}/{questions.Count}");
+            Console.WriteLine($"Scorul: {scor}/{questions.Count}");
             Console.WriteLine("Apasati orice tasta pentru a continua.");
             Console.ReadKey();
             indexIntrebariiCurente++;
