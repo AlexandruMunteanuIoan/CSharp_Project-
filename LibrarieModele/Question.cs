@@ -8,9 +8,9 @@ namespace LibrarieModele
 {
     public class Question
     {
-        public string intrebare;
-        public List<string> optiuni;
-        public int indexIntrebariiCurente;
+        public string intrebare { get; set; }
+        public List<string> optiuni { get; set; }
+        public int indexIntrebariiCurente { get; set; }
 
         public Question(string intrebare, List<string> optiuni, int indexIntrebariiCurente)
         {
@@ -24,14 +24,6 @@ namespace LibrarieModele
             return indexRaspuns == indexIntrebariiCurente;
         }
 
-        public void Display()
-        {
-            Console.WriteLine(intrebare);
-            for (int i = 0; i < optiuni.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}. {optiuni[i]}");
-            }
-        }
     }
 
 }
