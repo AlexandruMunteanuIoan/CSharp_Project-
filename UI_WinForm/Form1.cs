@@ -12,10 +12,12 @@ using System.Windows.Forms;
 
 using NivelStocareDate;
 
+
 namespace UI_WinForm
 {
     public partial class Form1 : Form
     {
+        private Label label1;
         public Form1()
         {
             InitializeComponent();
@@ -30,11 +32,13 @@ namespace UI_WinForm
             this.MinimizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
 
+            label1 = new Label();
             label1.Text = "Welcome";
             label1.Font = new Font(label1.Font.FontFamily, 56);
             button1.Font = new Font(button1.Font.FontFamily, 20);
+            label1.ForeColor = Color.White;
 
-            label1.Size = new Size(150, 80); 
+            label1.Size = new Size(500, 80); 
             button1.Size = new Size(100, 50);
 
             int centerX = (screenWidth - formWidth) / 2;
@@ -49,6 +53,7 @@ namespace UI_WinForm
             button1.Top = formHeight / 2 + 20;
 
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            this.Controls.Add(label1);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -68,5 +73,6 @@ namespace UI_WinForm
             form2.Show();
             this.Hide();
         }
+
     }
 }

@@ -34,7 +34,7 @@ namespace UI_WinForm
             this.MinimizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            label1.Text = "Select number of questions (5-35):";
+            label1.Text = "Select number of questions (10-30):";
             label1.Font = new Font(label1.Font.FontFamily, 35);
             textBox1.Font = new Font(textBox1.Font.FontFamily, 20);
 
@@ -67,22 +67,29 @@ namespace UI_WinForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            if (textBox1.Text == "sPFA")
+            {
+                Form5 form5 = new Form5();
+                form5.Show();
+                this.Hide();
+            }
+
             int n;
 
             if (int.TryParse(textBox1.Text, out n))
             {
-                if (n < 5 || n > 35)
-                {
-                    label1.Text = "Error!!!! Please enter a valid number (5 - 35).";
-                    label1.Left = ((int)(screenWidth * 0.8) - label1.Width) / 2;
-                }
-                else
+                if (n >= 10 && n <= 30)
                 {
                     Form3 form3 = new Form3(n);
                     form3.Show();
                     this.Hide();
                 }
+                
             }
+            label1.Text = "Error!!!! Please enter a valid number (10 - 30).";
+            label1.Left = ((int)(screenWidth * 0.8) - label1.Width) / 2;
+            textBox1.Text = string.Empty;
 
         }
     }

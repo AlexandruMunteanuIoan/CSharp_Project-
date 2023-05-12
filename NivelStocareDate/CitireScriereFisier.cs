@@ -11,21 +11,20 @@ namespace NivelStocareDate
     {
         private readonly string fileName = "questions.txt";
         private string numeFisier = "Scor.txt";
-        private  int number;
+        private int number;
 
         public CitireScriereFisier()
         {
-            
+
         }
 
-        public void ScriereScorInFisier( int scor)
+        public void ScriereScorInFisier(int scor)
         {
             using (StreamWriter streamWriterFisierText = new StreamWriter(numeFisier, true))
             {
                 streamWriterFisierText.WriteLine($"Scorul tău final este {scor}/{number}.");
             }
         }
-
 
         public List<Question> CitireFisier()
         {
@@ -54,7 +53,25 @@ namespace NivelStocareDate
             return questions;
         }
 
-       
+        public void AdaugareIntrebare(string intrebare, List<string> varianteDeRaspuns, int indexRaspunsCorect)
+        {
+            try
+            {
+                using (StreamWriter streamWriterFisierText = new StreamWriter(fileName, true))
+                {
+                    streamWriterFisierText.WriteLine(intrebare);
+                    foreach (string varianta in varianteDeRaspuns)
+                    {
+                        streamWriterFisierText.WriteLine(varianta);
+                    }
+                    streamWriterFisierText.WriteLine(indexRaspunsCorect);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Eroare la adăugarea întrebării în fișier: {ex.Message}");
+            }
+        }
 
         public List<Question> SelectareIntrebari(int n)
         {
@@ -72,6 +89,5 @@ namespace NivelStocareDate
 
             return intrebariSelectate;
         }
-
     }
 }
