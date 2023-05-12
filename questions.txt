@@ -1,0 +1,245 @@
+Care este cel mai mare ocean al lumii?
+Atlantic
+Indian
+Pacific
+Arctic
+2
+Ce este capitala Japoniei?
+Beijing
+Tokyo
+Seoul
+Bangkok
+1
+Care este cel mai lung fluviu din Africa?
+Nilul
+Congo
+Zambezi
+Niger
+0
+Care este capitala Rusiei?
+Moscova
+Sankt Petersburg
+Kiev
+Minsk
+0
+Cate continente exista pe Pamant?
+4
+5
+6
+7
+3
+Care este cel mai mare lac din lume dupa suprafata?
+Lacul Superior
+Lacul Victoria
+Marea Caspica
+Lacul Huron
+2
+Care este cel mai inalt munte din lume?
+Kilimanjaro
+Mont Blanc
+Everest
+Aconcagua
+2
+In ce tara se afla Machu Picchu?
+Peru
+Mexic
+Chile
+Argentina
+0
+Care este cel mai populat oras din lume?
+New York
+Tokyo
+Shanghai
+Delhi
+1
+Ce este capitala Spaniei?
+Barcelona
+Madrid
+Valencia
+Malaga
+1
+In ce ocean se afla Insula Pastelui?
+Pacificul de Sud
+Atlanticul de Nord
+Oceanul Indian
+Arctic
+0
+Care este cel mai mare desert din lume?
+Sahara
+Gobi
+Atacama
+Kalahari
+0
+Ce este capitala Canadei?
+Toronto
+Montreal
+Vancouver
+Ottawa
+3
+Care este cel mai mare stat din Statele Unite ale Americii dupa suprafata?
+Texas
+California
+Alaska
+Montana
+2
+In ce tara se afla Taj Mahal?
+India
+Pakistan
+Bangladesh
+Sri Lanka
+0
+Care este cel mai mare continent al lumii?
+Africa
+Asia
+Europa
+America de Nord
+1
+Care este capitala Australiei?
+Sydney
+Melbourne
+Perth
+Canberra
+3
+Care este cel mai mare rau din Europa?
+Dunarea
+Volga
+Rinul
+Tamisa
+1
+Care este capitala Mexicului?
+Guadalajara
+Mexico City
+Cancun
+Monterrey
+1
+In ce tara se afla Muntele Fuji?
+Japonia
+China
+Coreea de Sud
+Filipine
+0
+Care este capitala Italiei?
+Milano
+Roma
+Napoli
+Torino
+1
+In ce ocean se afla Insula Mauritius?
+Oceanul Indian
+Atlanticul de Sud
+Pacificul de Sud
+Marea Chinei de Sud
+0
+Care este capitala Germaniei?
+Berlin
+Frankfurt
+München
+Hamburg
+0
+Care este cel mai Inalt varf din Muntii Himalaya?
+Makalu
+K2
+Annapurna
+Everest
+3
+Care este capitala Turciei?
+Istanbul
+Ankara
+Izmir
+Antalya
+1
+In ce tara se afla Lacul Baikal?
+Rusia
+Mongolia
+Kazahstan
+China
+0
+Care este capitala Greciei?
+Atena
+Salonic
+Patras
+Heraklion
+0
+In ce ocean se afla Insula Madagascar?
+Atlanticul de Sud
+Pacificul de Sud
+Oceanul Indian
+Marea Chinei de Sud
+2
+Care este capitala Norvegiei?
+Oslo
+Bergen
+Trondheim
+Stavanger
+0
+Care este cel mai mare stat din Uniunea Europeana dupa suprafata?
+Franta
+Spania
+Germania
+Italia
+0
+In ce loc se afla Victoria Falls?
+Zambia
+Zimbabwe
+Angola
+Mozambic
+1
+Care este capitala Portugaliei?
+Lisabona
+Porto
+Faro
+Coimbra
+0
+Care este cel mai mare golf din lume?
+Gulf of Mexico
+Marea Mediterana
+Marea Neagra
+Marea Caraibilor
+0
+In ce tara se afla Ruapehu, unul dintre cei mai activi vulcani din lume?
+Noua Zeelanda
+Australia
+Indonezia
+Filipine
+0
+Care este capitala Irlandei?
+Dublin
+Cork
+Galway
+Limerick
+0
+In ce ocean se afla Insula Bali?
+Pacificul de Sud
+Marea Chinei de Sud
+Oceanul Indian
+Atlanticul de Sud
+2
+Care este capitala Braziliei?
+Sao Paulo
+Rio de Janeiro
+Brasilia
+Salvador
+2
+In ce tara se afla Insula Cipru?
+Turcia
+Grecia
+Cipru
+Egipt
+2
+Care este cel mai mare port din Europa?
+Rotterdam
+Hamburg
+Marseille
+Genova
+0
+In ce ocean se afla Insula Bora Bora?
+Pacificul de Sud
+Marea Chinei de Sud
+Atlanticul de Sud
+Oceanul Indian
+Ce este FIESC?
+Companie
+Facultate
+Organizatie
+Ceva
+1
