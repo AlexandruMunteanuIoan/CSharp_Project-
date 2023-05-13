@@ -7,8 +7,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,13 +26,21 @@ namespace UI_WinForm
         private Quizi quizi;
         private Question intrebareCurenta;
         private int n;
+        private int i = 1;
+        Label lblscor;
 
         public Form3(int n)
         {
+
+
             InitializeComponent();
 
             this.n = n;
-            citireScriereFisier = new CitireScriereFisier();
+
+            string numeFisier = "questions.txt";
+            string locatieFisierSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string caleCompletaFisier = locatieFisierSolutie + "\\" + numeFisier;
+            citireScriereFisier = new CitireScriereFisier(caleCompletaFisier);
             intrebari = citireScriereFisier.SelectareIntrebari(n);
 
             if (intrebari.Count == 0)
@@ -45,6 +53,7 @@ namespace UI_WinForm
             quizi = new Quizi(intrebari);
             quizi.Start();
             intrebareCurenta = quizi.NextQuestion();
+            lblscor = new Label();
             AfisareIntrebareCurenta();
 
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
@@ -68,6 +77,12 @@ namespace UI_WinForm
             }
             else
             {
+                
+                lblscor.ForeColor = Color.White;
+                lblscor.Font = new Font(lblscor.Font.FontFamily, 22, FontStyle.Bold);
+                lblscor.AutoSize = true;
+                lblscor.Location = new Point(100, formHeight - 125);
+
                 label1.Text = intrebareCurenta.intrebare;
                 label1.Font = new Font(label1.Font.FontFamily, 22, FontStyle.Bold);
                 label1.AutoSize = false;
@@ -108,6 +123,8 @@ namespace UI_WinForm
                 button5.Font = new Font(button5.Font.FontFamily, 20);
                 button5.Enabled = false;
 
+                this.Controls.Add(lblscor);
+
             }
 
         }
@@ -129,6 +146,7 @@ namespace UI_WinForm
                 button2.Text = intrebareCurenta.optiuni[1];
                 button3.Text = intrebareCurenta.optiuni[2];
                 button4.Text = intrebareCurenta.optiuni[3];
+                lblscor.Text = i + "/" + n;
             }
         }
 
@@ -214,6 +232,7 @@ namespace UI_WinForm
             Question nextQuestion = quizi.NextQuestion();
             if (nextQuestion != null)
             {
+                i++;
                 intrebareCurenta = nextQuestion;
                 AfisareIntrebareCurenta();
                 ResetButtonColors();

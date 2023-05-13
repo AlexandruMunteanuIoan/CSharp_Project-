@@ -19,6 +19,8 @@ namespace UI_WinForm
         int screenHeight;
         int formWidth;
         int formHeight;
+
+        private string secretKey = "S7t8u2d1e10n2t";
         public Form2()
         {
             InitializeComponent();
@@ -67,8 +69,9 @@ namespace UI_WinForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string encryptedPassword = EncryptPassword(textBox1.Text);
 
-            if (textBox1.Text == "sPFA")
+            if (encryptedPassword == " g2y")
             {
                 Form5 form5 = new Form5();
                 form5.Show();
@@ -91,6 +94,21 @@ namespace UI_WinForm
             label1.Left = ((int)(screenWidth * 0.8) - label1.Width) / 2;
             textBox1.Text = string.Empty;
 
+        }
+
+        private string EncryptPassword(string password)
+        {
+            char[] passwordChars = password.ToCharArray();
+            char[] keyChars = secretKey.ToCharArray();
+
+            for (int i = 0; i < passwordChars.Length; i++)
+            {
+                passwordChars[i] = (char)(passwordChars[i] ^ keyChars[i % keyChars.Length]);
+            }
+
+            string encryptedPassword = new string(passwordChars);
+
+            return encryptedPassword;
         }
     }
 }

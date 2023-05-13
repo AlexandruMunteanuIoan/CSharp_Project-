@@ -9,13 +9,15 @@ namespace NivelStocareDate
 {
     public class CitireScriereFisier
     {
-        private readonly string fileName = "questions.txt";
+        private string fileName ;
         private string numeFisier = "Scor.txt";
         private int number;
 
-        public CitireScriereFisier()
+        public CitireScriereFisier(string fileName)
         {
-
+            this.fileName = fileName;
+            Stream streamFisierText = File.Open(fileName, FileMode.OpenOrCreate);
+            streamFisierText.Close();
         }
 
         public void ScriereScorInFisier(int scor)
