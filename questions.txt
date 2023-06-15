@@ -243,3 +243,15 @@ Facultate
 Organizatie
 Ceva
 1
+Ce este FIESC?
+ceva
+mancare
+Facultate
+Nu stiu
+2
+Ce an e acum?
+2023
+2121
+2022
+2024
+0

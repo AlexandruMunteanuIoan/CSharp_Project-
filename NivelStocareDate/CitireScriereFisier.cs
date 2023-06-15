@@ -20,14 +20,6 @@ namespace NivelStocareDate
             streamFisierText.Close();
         }
 
-        public void ScriereScorInFisier(int scor)
-        {
-            using (StreamWriter streamWriterFisierText = new StreamWriter(numeFisier, true))
-            {
-                streamWriterFisierText.WriteLine($"Scorul tău final este {scor}/{number}.");
-            }
-        }
-
         public List<Question> CitireFisier()
         {
             List<Question> questions = new List<Question>();

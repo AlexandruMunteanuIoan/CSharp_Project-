@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace UI_WinForm
 {
-    public partial class Form2 : Form
+    public partial class SelectQuestions : Form
     {
         int screenWidth;
         int screenHeight;
@@ -21,7 +21,7 @@ namespace UI_WinForm
         int formHeight;
 
         private string secretKey = "S7t8u2d1e10n2t";
-        public Form2()
+        public SelectQuestions()
         {
             InitializeComponent();
 
@@ -36,63 +36,63 @@ namespace UI_WinForm
             this.MinimizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            label1.Text = "Select number of questions (10-30):";
-            label1.Font = new Font(label1.Font.FontFamily, 35);
-            textBox1.Font = new Font(textBox1.Font.FontFamily, 20);
+            lblSelectQuestions.Text = "Select number of questions (10-30):";
+            lblSelectQuestions.Font = new Font(lblSelectQuestions.Font.FontFamily, 35);
+            txtBoxNrQuestions.Font = new Font(txtBoxNrQuestions.Font.FontFamily, 20);
 
-            textBox1.Size = new Size(500, 50);
+            txtBoxNrQuestions.Size = new Size(500, 50);
 
             int centerX = (screenWidth - formWidth) / 2;
             int centerY = (screenHeight - formHeight) / 2;
 
             this.Location = new Point(centerX, centerY);
 
-            button1.Size = new Size(150, 40);
-            button1.Font = new Font(button1.Font.FontFamily, 16);
+            btStartQuiz.Size = new Size(150, 40);
+            btStartQuiz.Font = new Font(btStartQuiz.Font.FontFamily, 16);
 
-            label1.Left = (formWidth - label1.Width) / 2 - 8;
-            textBox1.Left = (formWidth - textBox1.Width) / 2 - 8;
-            button1.Left = (formWidth - button1.Width) / 2 - 8;
+            lblSelectQuestions.Left = (formWidth - lblSelectQuestions.Width) / 2 - 8;
+            txtBoxNrQuestions.Left = (formWidth - txtBoxNrQuestions.Width) / 2 - 8;
+            btStartQuiz.Left = (formWidth - btStartQuiz.Width) / 2 - 8;
 
-            label1.Top = formHeight / 2 - label1.Height - 40;
-            textBox1.Top = formHeight / 2 ;
-            button1.Top = formHeight / 2 + 40;
+            lblSelectQuestions.Top = formHeight / 2 - lblSelectQuestions.Height - 40;
+            txtBoxNrQuestions.Top = formHeight / 2 ;
+            btStartQuiz.Top = formHeight / 2 + 40;
 
 
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            lblSelectQuestions.TextAlign = ContentAlignment.MiddleCenter;
 
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtBoxNrQuestions_TextChanged(object sender, EventArgs e)
         {
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btStartQuiz_Click(object sender, EventArgs e)
         {
-            string encryptedPassword = EncryptPassword(textBox1.Text);
+            string encryptedPassword = EncryptPassword(txtBoxNrQuestions.Text);
 
             if (encryptedPassword == " g2y")
             {
-                Form5 form5 = new Form5();
+                AdminForm form5 = new AdminForm();
                 form5.Show();
                 this.Hide();
             }
 
             int n;
 
-            if (int.TryParse(textBox1.Text, out n))
+            if (int.TryParse(txtBoxNrQuestions.Text, out n))
             {
                 if (n >= 10 && n <= 30)
                 {
-                    Form3 form3 = new Form3(n);
+                    TestForm form3 = new TestForm(n);
                     form3.Show();
                     this.Hide();
                 }
                 
             }
-            label1.Text = "Error!!!! Please enter a valid number (10 - 30).";
-            label1.Left = ((int)(screenWidth * 0.8) - label1.Width) / 2;
-            textBox1.Text = string.Empty;
+            lblSelectQuestions.Text = "Error!!!! Please enter a valid number (10 - 30).";
+            lblSelectQuestions.Left = ((int)(screenWidth * 0.8) - lblSelectQuestions.Width) / 2;
+            txtBoxNrQuestions.Text = string.Empty;
 
         }
 

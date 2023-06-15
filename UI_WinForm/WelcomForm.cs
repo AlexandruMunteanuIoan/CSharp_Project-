@@ -15,10 +15,10 @@ using NivelStocareDate;
 
 namespace UI_WinForm
 {
-    public partial class Form1 : Form
+    public partial class WelcomForm : Form
     {
-        private Label label1;
-        public Form1()
+        private Label lblWelcome;
+        public WelcomForm()
         {
             InitializeComponent();
 
@@ -32,44 +32,39 @@ namespace UI_WinForm
             this.MinimizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            label1 = new Label();
-            label1.Text = "Welcome";
-            label1.Font = new Font(label1.Font.FontFamily, 56);
-            button1.Font = new Font(button1.Font.FontFamily, 20);
-            label1.ForeColor = Color.White;
+            lblWelcome = new Label();
+            lblWelcome.Text = "Welcome";
+            lblWelcome.Font = new Font(lblWelcome.Font.FontFamily, 56);
+            btStart.Font = new Font(btStart.Font.FontFamily, 20);
+            lblWelcome.ForeColor = Color.White;
 
-            label1.Size = new Size(500, 80); 
-            button1.Size = new Size(100, 50);
+            lblWelcome.Size = new Size(500, 80); 
+            btStart.Size = new Size(100, 50);
 
             int centerX = (screenWidth - formWidth) / 2;
             int centerY = (screenHeight - formHeight) / 2;
 
             this.Location = new Point(centerX, centerY);
 
-            label1.Left = (formWidth - label1.Width) / 2 - 8;
-            button1.Left = (formWidth - button1.Width) / 2 - 8;
+            lblWelcome.Left = (formWidth - lblWelcome.Width) / 2 - 8;
+            btStart.Left = (formWidth - btStart.Width) / 2 - 8;
 
-            label1.Top = formHeight / 2 - label1.Height - 20;
-            button1.Top = formHeight / 2 + 20;
+            lblWelcome.Top = formHeight / 2 - lblWelcome.Height - 20;
+            btStart.Top = formHeight / 2 + 20;
 
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            this.Controls.Add(label1);
+            lblWelcome.TextAlign = ContentAlignment.MiddleCenter;
+            this.Controls.Add(lblWelcome);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void lblWelcome_Click(object sender, EventArgs e)
         {
 
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btStart_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            SelectQuestions form2 = new SelectQuestions();
             form2.Show();
             this.Hide();
         }

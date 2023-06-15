@@ -18,7 +18,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace UI_WinForm
 {
-    public partial class Form3 : Form
+    public partial class TestForm : Form
     {
 
         private CitireScriereFisier citireScriereFisier;
@@ -29,7 +29,7 @@ namespace UI_WinForm
         private int i = 1;
         Label lblscor;
 
-        public Form3(int n)
+        public TestForm(int n)
         {
 
 
@@ -83,45 +83,45 @@ namespace UI_WinForm
                 lblscor.AutoSize = true;
                 lblscor.Location = new Point(100, formHeight - 125);
 
-                label1.Text = intrebareCurenta.intrebare;
-                label1.Font = new Font(label1.Font.FontFamily, 22, FontStyle.Bold);
-                label1.AutoSize = false;
-                label1.TextAlign = ContentAlignment.MiddleCenter;
+                lblQuestion.Text = intrebareCurenta.intrebare;
+                lblQuestion.Font = new Font(lblQuestion.Font.FontFamily, 22, FontStyle.Bold);
+                lblQuestion.AutoSize = false;
+                lblQuestion.TextAlign = ContentAlignment.MiddleCenter;
 
                 int labelWidth = Math.Min(formWidth - 40, rectangleWidth);
                 int labelHeight = Math.Min(formHeight - 40, rectangleHeight);
 
-                label1.Size = new Size(labelWidth, labelHeight);
+                lblQuestion.Size = new Size(labelWidth, labelHeight);
 
-                label1.Location = new Point((formWidth - label1.Width) / 2, - 100);
+                lblQuestion.Location = new Point((formWidth - lblQuestion.Width) / 2, - 100);
 
 
 
-                button1.Text = intrebareCurenta.optiuni[0];
-                button1.Size = new Size(225, 75);
-                button1.Location = new Point(rectangleX - 10, rectangleY + 60);
-                button1.Font = new Font(button1.Font.FontFamily, 20);
+                btAnswer1.Text = intrebareCurenta.optiuni[0];
+                btAnswer1.Size = new Size(225, 75);
+                btAnswer1.Location = new Point(rectangleX - 10, rectangleY + 60);
+                btAnswer1.Font = new Font(btAnswer1.Font.FontFamily, 20);
 
-                button2.Text = intrebareCurenta.optiuni[1];
-                button2.Size = new Size(225, 75);
-                button2.Location = new Point(rectangleX + rectangleWidth - 230, rectangleY + 60);
-                button2.Font = new Font(button2.Font.FontFamily, 20);
+                btAnswer2.Text = intrebareCurenta.optiuni[1];
+                btAnswer2.Size = new Size(225, 75);
+                btAnswer2.Location = new Point(rectangleX + rectangleWidth - 230, rectangleY + 60);
+                btAnswer2.Font = new Font(btAnswer2.Font.FontFamily, 20);
 
-                button3.Text = intrebareCurenta.optiuni[2];
-                button3.Size = new Size(225, 75);
-                button3.Location = new Point(rectangleX - 10, rectangleY + rectangleHeight - 180);
-                button3.Font = new Font(button3.Font.FontFamily, 20);
+                btAnswer3.Text = intrebareCurenta.optiuni[2];
+                btAnswer3.Size = new Size(225, 75);
+                btAnswer3.Location = new Point(rectangleX - 10, rectangleY + rectangleHeight - 180);
+                btAnswer3.Font = new Font(btAnswer3.Font.FontFamily, 20);
 
-                button4.Text = intrebareCurenta.optiuni[3];
-                button4.Size = new Size(225, 75);
-                button4.Location = new Point(rectangleX + rectangleWidth - 230, rectangleY + rectangleHeight - 180);
-                button4.Font = new Font(button4.Font.FontFamily, 20);
+                btAnswer4.Text = intrebareCurenta.optiuni[3];
+                btAnswer4.Size = new Size(225, 75);
+                btAnswer4.Location = new Point(rectangleX + rectangleWidth - 230, rectangleY + rectangleHeight - 180);
+                btAnswer4.Font = new Font(btAnswer4.Font.FontFamily, 20);
 
-                button5.Text = "Next";
-                button5.Size = new Size(150, 50);
-                button5.Location = new Point(formWidth - 200, formHeight - 125);
-                button5.Font = new Font(button5.Font.FontFamily, 20);
-                button5.Enabled = false;
+                btNext.Text = "Next";
+                btNext.Size = new Size(150, 50);
+                btNext.Location = new Point(formWidth - 200, formHeight - 125);
+                btNext.Font = new Font(btNext.Font.FontFamily, 20);
+                btNext.Enabled = false;
 
                 this.Controls.Add(lblscor);
 
@@ -129,10 +129,6 @@ namespace UI_WinForm
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void AfisareIntrebareCurenta()
         {
             if (intrebareCurenta == null)
@@ -141,93 +137,93 @@ namespace UI_WinForm
             }
             else
             {
-                label1.Text = intrebareCurenta.intrebare;
-                button1.Text = intrebareCurenta.optiuni[0];
-                button2.Text = intrebareCurenta.optiuni[1];
-                button3.Text = intrebareCurenta.optiuni[2];
-                button4.Text = intrebareCurenta.optiuni[3];
+                lblQuestion.Text = intrebareCurenta.intrebare;
+                btAnswer1.Text = intrebareCurenta.optiuni[0];
+                btAnswer2.Text = intrebareCurenta.optiuni[1];
+                btAnswer3.Text = intrebareCurenta.optiuni[2];
+                btAnswer4.Text = intrebareCurenta.optiuni[3];
                 lblscor.Text = i + "/" + n;
             }
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btAnswer1_Click(object sender, EventArgs e)
         {
             bool isCorrect = intrebareCurenta.IsAnswerCorrect(0);
-            button1.Enabled = false;
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = true;
+            btAnswer1.Enabled = false;
+            btAnswer2.Enabled = false;
+            btAnswer3.Enabled = false;
+            btAnswer4.Enabled = false;
+            btNext.Enabled = true;
             if (isCorrect)
             {
-                button1.BackColor = Color.Green; 
+                btAnswer1.BackColor = Color.Green; 
                 quizi.scor++;
             }
             else
             {
-                button1.BackColor = Color.Red; 
+                btAnswer1.BackColor = Color.Red; 
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btAnswer2_Click(object sender, EventArgs e)
         {
             bool isCorrect = intrebareCurenta.IsAnswerCorrect(1);
-            button1.Enabled = false;
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = true;
+            btAnswer1.Enabled = false;
+            btAnswer2.Enabled = false;
+            btAnswer3.Enabled = false;
+            btAnswer4.Enabled = false;
+            btNext.Enabled = true;
             if (isCorrect)
             {
-                button2.BackColor = Color.Green;
+                btAnswer2.BackColor = Color.Green;
                 quizi.scor++;
             }
             else
             {
-                button2.BackColor = Color.Red;
+                btAnswer2.BackColor = Color.Red;
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btAnswer3_Click(object sender, EventArgs e)
         {
             bool isCorrect = intrebareCurenta.IsAnswerCorrect(2);
-            button1.Enabled = false;
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = true;
+            btAnswer1.Enabled = false;
+            btAnswer2.Enabled = false;
+            btAnswer3.Enabled = false;
+            btAnswer4.Enabled = false;
+            btNext.Enabled = true;
             if (isCorrect)
             {
-                button3.BackColor = Color.Green;
+                btAnswer3.BackColor = Color.Green;
                 quizi.scor++;
             }
             else
             {
-                button3.BackColor = Color.Red;
+                btAnswer3.BackColor = Color.Red;
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btAnswer4_Click(object sender, EventArgs e)
         {
             bool isCorrect = intrebareCurenta.IsAnswerCorrect(3);
-            button1.Enabled = false;
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = true;
+            btAnswer1.Enabled = false;
+            btAnswer2.Enabled = false;
+            btAnswer3.Enabled = false;
+            btAnswer4.Enabled = false;
+            btNext.Enabled = true;
             if (isCorrect)
             {
-                button4.BackColor = Color.Green;
+                btAnswer4.BackColor = Color.Green;
                 quizi.scor++;
             }
             else
             {
-                button4.BackColor = Color.Red;
+                btAnswer4.BackColor = Color.Red;
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btNext5_Click(object sender, EventArgs e)
         {
             Question nextQuestion = quizi.NextQuestion();
             if (nextQuestion != null)
@@ -240,7 +236,7 @@ namespace UI_WinForm
             }
             else
             {
-                Form4 form4 = new Form4(quizi.scor, n);
+                EndForm form4 = new EndForm(quizi.scor, n);
                 form4.Show();
                 this.Hide();
             }
@@ -248,23 +244,19 @@ namespace UI_WinForm
 
         private void ResetButtonColors()
         {
-            button1.BackColor = Color.FromArgb(255, 144, 0);
-            button2.BackColor = Color.FromArgb(255, 144, 0);
-            button3.BackColor = Color.FromArgb(255, 144, 0);
-            button4.BackColor = Color.FromArgb(255, 144, 0);
+            btAnswer1.BackColor = Color.FromArgb(255, 144, 0);
+            btAnswer2.BackColor = Color.FromArgb(255, 144, 0);
+            btAnswer3.BackColor = Color.FromArgb(255, 144, 0);
+            btAnswer4.BackColor = Color.FromArgb(255, 144, 0);
         }
 
         private void EnableButtons()
         {
-            button1.Enabled = true;
-            button2.Enabled = true;
-            button3.Enabled = true;
-            button4.Enabled = true;
-            button5.Enabled = false;
-        }
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
+            btAnswer1.Enabled = true;
+            btAnswer2.Enabled = true;
+            btAnswer3.Enabled = true;
+            btAnswer4.Enabled = true;
+            btNext.Enabled = false;
         }
     }
 }
